@@ -1,1 +1,18 @@
-{}
+{
+  "users": [
+    {
+      "id": "6eb7",
+      "nome": "lucas",
+      "email": "lucas@gmail.com",
+      "senha": "12345",
+      "pokemons": []
+    },
+    {
+      "id": "b041",
+      "nome": "Nicolas",
+      "email": "nicolas@gmail.com",
+      "senha": "12345",
+      "pokemons": []
+    }
+  ]
+}

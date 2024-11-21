@@ -4,6 +4,8 @@ import Header from './components/header/Header';
 
 import InfoPage from './pages/infoPage/InfoPage';
 import Home from './pages/home/Home';
+import Login from './pages/login/Login';
+import Cadastro from './pages/cadastro/Cadastro';
 
 
 function App() {
@@ -14,10 +16,12 @@ function App() {
         <Routes>
           <Route path="/" index element={<Home />} />
           <Route path="/pokemon/:id" element={<InfoPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/cadastro" element={<Cadastro />} />
           <Route path='*' element={
-          <div style={{ margin: 'auto 35%', display: 'flex', alignItems: 'center' }}>
-            <h1>Not Found - 404</h1>
-          </div>
+            <div style={{ margin: 'auto 35%', display: 'flex', alignItems: 'center' }}>
+              <h1>Not Found - 404</h1>
+            </div>
           } />
         </Routes>
       </main>
