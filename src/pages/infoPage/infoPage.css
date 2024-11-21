@@ -1,0 +1,77 @@
+.titulo-voltar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+  color: #000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.titulo-voltar button {
+  background-color: transparent;
+  color: #e98a8a;
+  border: none;
+  font-size: larger;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.titulo-voltar button:hover {
+    text-decoration: underline;
+}
+
+.titulo-voltar h1 {
+    font-size: 2em;
+  text-transform: capitalize;
+}
+
+.card-info {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  margin-top: 10px;
+  border: #e8e8e8 solid 1px;
+  border-radius: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.card-info img {
+  width: 350px;
+  height: auto;
+  margin: 25px;
+}
+
+.card-info .card-info-text {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.card-info div p {
+  font-size: 2em;
+}
+
+.btn-fav{
+    background-color: #e98a8a;
+    color: #fff;
+    font-size: 2em;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.btn-fav:hover{
+    background-color: #fff;
+    color: #e98a8a;
+    border: 1px solid #e98a8a;
+}
