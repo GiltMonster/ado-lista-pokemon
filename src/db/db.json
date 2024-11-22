@@ -1,18 +1,47 @@
 {
   "users": [
     {
-      "id": "6eb7",
+      "id": "b041",
+      "nome": "Nicolass",
+      "email": "nicolas@gmail.com",
+      "senha": "12345",
+      "pokemons": [
+        {
+          "id": 2,
+          "name": "ivysaur",
+          "type": "grass",
+          "ability": "overgrow",
+          "height": 10,
+          "weight": 130,
+          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/2.gif"
+        },
+        {
+          "id": 18,
+          "name": "pidgeot",
+          "type": "normal",
+          "ability": "keen-eye",
+          "height": 15,
+          "weight": 395,
+          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/18.gif"
+        }
+      ]
+    },
+    {
+      "id": "a4b3",
       "nome": "lucas",
       "email": "lucas@gmail.com",
       "senha": "12345",
-      "pokemons": []
-    },
-    {
-      "id": "b041",
-      "nome": "Nicolas",
-      "email": "nicolas@gmail.com",
-      "senha": "12345",
-      "pokemons": []
+      "pokemons": [
+        {
+          "id": 25,
+          "name": "pikachu",
+          "type": "electric",
+          "ability": "static",
+          "height": 4,
+          "weight": 60,
+          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif"
+        }
+      ]
     }
   ]
 }

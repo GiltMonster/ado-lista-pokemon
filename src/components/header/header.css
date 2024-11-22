@@ -41,3 +41,11 @@ a:hover {
   text-decoration: underline;
   color: #ff5a5a;
 }
+
+
+hr {
+  width: 1px;
+  height: 25px;
+  background-color: #ff5a5a;
+
+}

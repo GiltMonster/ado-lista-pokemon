@@ -22,6 +22,7 @@ export default function Login() {
                 data.email = data.email.toLowerCase();
                 const user = users.find(user => user.email === data.email && user.senha === data.senha);
                 if (user) {
+                    localStorage.clear();
                     localStorage.setItem('logado', JSON.stringify(user));
                     toast('Logado com sucesso', { position: 'bottom-right', type: 'success' });
                     navigate('/');

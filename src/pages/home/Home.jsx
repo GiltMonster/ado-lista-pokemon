@@ -1,17 +1,47 @@
 import './home.css'
 import Card from '../../components/card/Card'
 import { useState, useEffect } from 'react'
+import { toast, ToastContainer } from 'react-toastify';
 
 export default function Home() {
-
 
   const [pokemons, setPokemons] = useState([]);
   const [limit, setLimit] = useState(20);
   const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('logado')));
 
   useEffect(() => {
     loadPokemons(limit);
   }, [limit]);
+
+  useEffect(() => {
+    atualizaUser();
+  }, []);
+
+  function atualizaUser() {
+    if (user) {
+      fetch(`http://localhost:3000/users/${user.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      })
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          }
+          toast('Erro ao atualizar usuário', { position: 'bottom-right', type: 'error' });
+        })
+        .then(data => {
+          localStorage.setItem('logado', JSON.stringify(data));
+          setUser(data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  }
 
   function loadMore() {
     setLimit(limit + 20);
@@ -72,6 +102,7 @@ export default function Home() {
 
       {loading ? <div className="loader"></div> : <button onClick={() => { loadMore() }} className='btn'>Carregar mais.</button>}
 
+      <ToastContainer />
     </section>
   )
 }
