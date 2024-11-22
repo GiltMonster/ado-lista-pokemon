@@ -8,9 +8,12 @@ export default function InfoPage() {
 
   const { id } = useParams();
   const [pokemon, setPokemon] = useState({});
+  const [usuarioLogado, setUsuarioLogado] = useState({});
+
   const navigate = useNavigate();
 
   useEffect(() => {
+    setUsuarioLogado(JSON.parse(localStorage.getItem('logado')));
     getPokemon(id);
   }, [id]);
 
@@ -36,17 +39,21 @@ export default function InfoPage() {
   }
 
   function addFavorito() {
-    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
-    let isLogado = localStorage.getItem('logado');
-    if (!isLogado) {
+    setUsuarioLogado(JSON.parse(localStorage.getItem('logado')));
+
+    console.log(usuarioLogado);
+
+    if (!usuarioLogado) {
       toast('Você precisa estar logado para adicionar aos favoritos', { position: 'bottom-right', type: 'error' });
       return;
     }
 
+    let favoritos = usuarioLogado.pokemons || [];
     if (favoritos.some(pokemonFavorito => pokemonFavorito.id === pokemon.id)) {
       toast('Este pokemon já está nos favoritos', { position: 'bottom-right' });
       return;
     }
+
     let pokemonFavorito = {
       id: pokemon.id,
       name: pokemon.name,
@@ -56,8 +63,16 @@ export default function InfoPage() {
       weight: pokemon.weight,
       image: pokemon.image
     }
+
     favoritos.push(pokemonFavorito);
-    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+
+    setUsuarioLogado({
+      ...usuarioLogado,
+      pokemons: favoritos
+    });
+
+    localStorage.setItem('logado', JSON.stringify(usuarioLogado));
+    toast('Pokemon adicionado aos favoritos', { position: 'bottom-right' });
   }
 
   return (
